@@ -6,11 +6,10 @@ conversion_rate = {
 }
 
 def currency_converter(amount, from_currency, to_currency):
+    
     if amount < 0:
         return 0.0
 
-    if from_currency == to_currency:
-        return 0.0
 
     
     if from_currency == to_currency:
@@ -18,7 +17,7 @@ def currency_converter(amount, from_currency, to_currency):
     
     if from_currency in conversion_rate and to_currency in conversion_rate[from_currency]:
         rate = conversion_rate[from_currency][to_currency]
-        converted_amount = amount * conversion_rate
+        converted_amount = amount * rate
         return round(converted_amount, 2)
 
     return 0.0
